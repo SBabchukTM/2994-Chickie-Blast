@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5037beb5f3c5892469cd26f28bbd27a3, type: 3}
+  m_Name: ShopConfig
+  m_EditorClassIdentifier: 
+  Skins:
+  - ItemSprite: {fileID: 21300000, guid: c42b87ae93d177c468e03a4c0afe6841, type: 3}
+    Price: 0
+  - ItemSprite: {fileID: 21300000, guid: c86297bd93784814fa2288c2d4d6fa05, type: 3}
+    Price: 100
+  - ItemSprite: {fileID: 21300000, guid: e25f4be8915d2cc418455055a34be237, type: 3}
+    Price: 200
+  - ItemSprite: {fileID: 21300000, guid: 95233bcf59efdd54ea5317b14064e01f, type: 3}
+    Price: 300
+  - ItemSprite: {fileID: 21300000, guid: 6a836437848af684e94e23e2501247b6, type: 3}
+    Price: 400
+  - ItemSprite: {fileID: 21300000, guid: e51c5c2578fc0fb41ab1047b58ece7be, type: 3}
+    Price: 500
+  - ItemSprite: {fileID: 21300000, guid: f5858adda84031842b2402818244f16d, type: 3}
+    Price: 600
+  - ItemSprite: {fileID: 21300000, guid: 626eaf128a00945439894e06e7cb733f, type: 3}
+    Price: 700
+  ConePrice: 50
+  SpawnChicksPrice: 100

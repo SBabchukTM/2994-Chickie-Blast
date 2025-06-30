@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed3f3a01515cc2b46b2b9d52de8076f1, type: 3}
+  m_Name: GameConfig
+  m_EditorClassIdentifier: 
+  SectionOneBgVisuals:
+    SectionBG: {fileID: 21300000, guid: 96abd7a8f94930e49b3d329343e05d1f, type: 3}
+    SectionMap: {fileID: 21300000, guid: 111a39ea7e23c654aa1bea27b1d8260b, type: 3}
+  SectionTwoBgVisuals:
+    SectionBG: {fileID: 21300000, guid: 14fd1ece20349bb4e81d0924ebcccca6, type: 3}
+    SectionMap: {fileID: 21300000, guid: 9ac9e38542a760841ae5ffd41c680e1a, type: 3}
+  SectionThreeBgVisuals:
+    SectionBG: {fileID: 21300000, guid: c1d74232c9a9dca47b70e79af6451ec0, type: 3}
+    SectionMap: {fileID: 21300000, guid: 3b5b8ba49ee54f140ad24cb64dde47e1, type: 3}
+  SectionOneMaps:
+  - Prefab: {fileID: 1310537663217235667, guid: 5dbbb701e747118458cb3d3f29d388f6, type: 3}
+    ThreeStarCondition: 12
+    TwoStarCondition: 14
+  - Prefab: {fileID: 4719088692674214672, guid: aa12136196f6d36479f033f1767ab8ff, type: 3}
+    ThreeStarCondition: 8
+    TwoStarCondition: 10
+  - Prefab: {fileID: 4156039222594119886, guid: ce5046683ce13ef4db5f4958974aa1e4, type: 3}
+    ThreeStarCondition: 8
+    TwoStarCondition: 10
+  - Prefab: {fileID: 3045782347183322029, guid: 45943d2e3f7605c49ba068da97463f06, type: 3}
+    ThreeStarCondition: 15
+    TwoStarCondition: 17
+  - Prefab: {fileID: 3292176272642833332, guid: cb94d3a6ae89a144e8cbba84d8428a1d, type: 3}
+    ThreeStarCondition: 17
+    TwoStarCondition: 20
+  - Prefab: {fileID: 1296130096431148444, guid: c6fc721910766e146aae228cbd596825, type: 3}
+    ThreeStarCondition: 15
+    TwoStarCondition: 17
+  - Prefab: {fileID: 292978162746703886, guid: bed607a62e73f36408fc184d24054e34, type: 3}
+    ThreeStarCondition: 12
+    TwoStarCondition: 14
+  SectionTwoMaps:
+  - Prefab: {fileID: 4277694989829744808, guid: acfe2ed872be4bc489af04089fde638f, type: 3}
+    ThreeStarCondition: 18
+    TwoStarCondition: 20
+  - Prefab: {fileID: 6752292237874654622, guid: cf63e24270fb91747b9a9ad315949133, type: 3}
+    ThreeStarCondition: 18
+    TwoStarCondition: 20
+  - Prefab: {fileID: 715191963341041648, guid: 8f4a1ad3bb8c86345be731c4f2f36196, type: 3}
+    ThreeStarCondition: 16
+    TwoStarCondition: 18
+  - Prefab: {fileID: 8274092100189083230, guid: 5ce5c0b27499b38409e91c72f25ada35, type: 3}
+    ThreeStarCondition: 15
+    TwoStarCondition: 17
+  - Prefab: {fileID: 6049497656836521587, guid: 94fbea72a9ffaf340b190b664d18bb83, type: 3}
+    ThreeStarCondition: 12
+    TwoStarCondition: 14
+  - Prefab: {fileID: 7103216123365315652, guid: 34157097a302bb34c9271f5f5fd9c28d, type: 3}
+    ThreeStarCondition: 11
+    TwoStarCondition: 13
+  - Prefab: {fileID: 9127024496093337338, guid: 459cbf504862ba3428316a6b54f60940, type: 3}
+    ThreeStarCondition: 11
+    TwoStarCondition: 13
+  SectionThreeMaps:
+  - Prefab: {fileID: 3428722026511418313, guid: a094672605026f24299935c0c591cb54, type: 3}
+    ThreeStarCondition: 27
+    TwoStarCondition: 30
+  - Prefab: {fileID: 859418243196661513, guid: de0f6ff677f92b44fa963fb5f0a0c24d, type: 3}
+    ThreeStarCondition: 17
+    TwoStarCondition: 30
+  - Prefab: {fileID: 808289420310666679, guid: a8d59fcc89aec8f438943f1b972028f2, type: 3}
+    ThreeStarCondition: 16
+    TwoStarCondition: 19
+  - Prefab: {fileID: 5439983102803438188, guid: 495fbac9893c8164595e03091fc48707, type: 3}
+    ThreeStarCondition: 14
+    TwoStarCondition: 17
+  - Prefab: {fileID: 4718785718334236554, guid: 081565cccc4f1c64281a03c8aa87ce43, type: 3}
+    ThreeStarCondition: 20
+    TwoStarCondition: 23
+  - Prefab: {fileID: 5657402399224768832, guid: 34983aa3bc4370f45beee47a91a89717, type: 3}
+    ThreeStarCondition: 24
+    TwoStarCondition: 27
+  - Prefab: {fileID: 7281328175843325302, guid: a0b0ca76b1accdf4a976002737ec7def, type: 3}
+    ThreeStarCondition: 23
+    TwoStarCondition: 26

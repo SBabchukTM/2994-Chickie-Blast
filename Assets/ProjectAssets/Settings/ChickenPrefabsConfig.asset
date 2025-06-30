@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d157de162429e6d4187063c8b9c5738c, type: 3}
+  m_Name: ChickenPrefabsConfig
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 4662820400171911852, guid: 1a8bd7c55b2cb7448af0f916d9619504, type: 3}
+  - {fileID: 6824219796223679467, guid: dc6adde23e03e8e4982fe906cb622bf2, type: 3}
+  - {fileID: 8519564967749983246, guid: 8d838ff6e0db1e642a27b4675e552004, type: 3}
+  - {fileID: 2360636542639932918, guid: 1fe384bd6fa12f5418a7ec52386462ce, type: 3}
+  - {fileID: 7475315327821112318, guid: 2efdf2357d8c2b34ca180d9ad1faa5da, type: 3}
+  - {fileID: 3178994265898418938, guid: 925d4d0c1ce82ba4eb5a518e08433d78, type: 3}
+  - {fileID: 8015863829593548780, guid: 37542cbf61a933a46bf1a3485a4a1576, type: 3}
+  - {fileID: 7901218132897363992, guid: 07e989bb697487c498fbce33815851e7, type: 3}
