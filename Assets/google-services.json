@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "623159164321",
+    "project_id": "chickie-blast",
+    "storage_bucket": "chickie-blast.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623159164321:android:e9204590046c221693dfe0",
+        "android_client_info": {
+          "package_name": "com.adobe.premiererush.videoedito"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIVRKtxhZ3zc1Gj09M7aUtj3ciBCmEaxY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

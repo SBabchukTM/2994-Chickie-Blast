@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id">
+  <string name="gcm_defaultSenderId" translatable="false">623159164321</string>
+  <string name="google_storage_bucket" translatable="false">chickie-blast.firebasestorage.app</string>
+  <string name="project_id" translatable="false">chickie-blast</string>
+  <string name="google_api_key" translatable="false">AIzaSyCIVRKtxhZ3zc1Gj09M7aUtj3ciBCmEaxY</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCIVRKtxhZ3zc1Gj09M7aUtj3ciBCmEaxY</string>
+  <string name="google_app_id" translatable="false">1:623159164321:android:e9204590046c221693dfe0</string>
+</resources>
