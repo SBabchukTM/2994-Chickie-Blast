@@ -18,6 +18,8 @@ public class WebViewController : MonoBehaviour
     
     [SerializeField, Header("Reload start page")] private bool canReload;
     
+    const string permission = "android.permission.POST_NOTIFICATIONS";
+    
     private UniWebView _webView;
 
     private string _url;
@@ -29,25 +31,13 @@ public class WebViewController : MonoBehaviour
     private float _checkInterval = 1f;
     
     private Coroutine rotationCoroutine;
-    
-    #if UNITY_ANDROID && !UNITY_EDITOR
-    private KeyboardVisibilityDetector _keyboardDetector;
-    #endif
-    
+
     private bool _keyboardUsing;
 
     private string UrlB
     {
         get
         {
-            //return "https://balloonswinner.life/privacypolicy/?3ve1kbqs8h=e9fecaf8-1376-4017-9115-e95a08119218&huax91ae4p=0&6x13a9aqh2=cmpgn=trident-dev-test_TEST-Deeplink_test1_%D1%82%D0%B5%D1%81%D1%822_TEST3_%D0%A2%D0%95%D0%A1%D0%A24_s%20p%20a%20c%20e";//✔
-            return "https://betking.com.ua/";//✔
-            //return "https://winboss.ua";//✔
-            //return "http://www.http2demo.io/";//✔
-            //return "https://slotscity.ua/";//✔
-            //return "https://www.whatismybrowser.com/detect/are-third-party-cookies-enabled/";//✔
-            //return "https://betoholictrack.com/wKWSmlPF?sub_id=23uejou1gt25f"; //✔
-            
             if(!GameSettings.HasKey(Constants.IsFirstRunWebView))
             {
                 GameSettings.SetFirstWebView();
@@ -82,21 +72,15 @@ public class WebViewController : MonoBehaviour
         }
     }
     
+    private void Awake()
+    {
+        string key = $"asked_{permission}";
+        
+        PlayerPrefs.DeleteKey(key);
+    }
+    
     private void Start()
     {
-#if UNITY_ANDROID && !UNITY_EDITOR
-    using (AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
-    {
-        AndroidJavaObject activity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
-        _keyboardDetector = new KeyboardVisibilityDetector(activity);
-        _keyboardDetector.OnKeyboardChanged += visible =>
-        {
-            Debug.Log($"[Keyboard] Changed: {(visible ? "Shown" : "Hidden")}");
-            SetFrameForKeyboard(visible);
-        };
-    }
-#endif
-        
         InitializeWebView();
     }
 
@@ -183,8 +167,6 @@ public class WebViewController : MonoBehaviour
         {
             PrintMessage("🚨 WebView крашнувся — рестартуємо апку");
 
-            //RestartAppAndroid();
-
             _webView.Reload();
         };
 
@@ -237,26 +219,6 @@ public class WebViewController : MonoBehaviour
             UnityEngine.Application.OpenURL(url);
         };
     }
-    
-    private void RestartAppAndroid()
-    {
-    #if UNITY_ANDROID && !UNITY_EDITOR
-        using (var unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
-        {
-            var activity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
-            var packageManager = activity.Call<AndroidJavaObject>("getPackageManager");
-            var packageName = activity.Call<string>("getPackageName");
-            
-            var intent = packageManager.Call<AndroidJavaObject>("getLaunchIntentForPackage", packageName);
-            
-            intent.Call<AndroidJavaObject>("addFlags", 0x20000000);
-            
-            activity.Call("startActivity", intent);
-            
-            activity.Call("finish");
-        }
-    #endif
-    }
 
     private void ShouldClose()
     {
@@ -290,33 +252,6 @@ public class WebViewController : MonoBehaviour
             {
                 PrintMessage($"@@@ 🫥 Різні розміри: WebView={_webView.Frame.width}x{_webView.Frame.height}, Screen={Screen.width}x{Screen.height}");
                 
-                SetFrame();
-            }
-        }
-    }
-
-    private void SetFrameForKeyboard(bool keyboardVisible)
-    {
-        PrintMessage($"@@@ SetFrameWithKeyboard: keyboardVisible={keyboardVisible}");
-        
-        if (keyboardVisible)
-        {
-            PrintMessage("[WebView] Клавіатура відкрита в портреті — показуємо WebView на весь екран");
-
-            _keyboardUsing = true;
-            
-            _webView.ReferenceRectTransform = null;
-            
-            _webView.Frame = new Rect(0, 0, Screen.width, Screen.height);
-        }
-        else
-        {
-            if (_keyboardUsing)
-            {
-                PrintMessage("[WebView] Клавіатура прихована в портреті — показуємо WebView з урахуванням SafeArea");
-
-                _keyboardUsing = false;
-            
                 SetFrame();
             }
         }
@@ -471,8 +406,6 @@ public class WebViewController : MonoBehaviour
     {
         PrintMessage($"### 🏁OnPageFinished: url={url}");
         
-        view.EvaluateJavaScript("document.body.click();", _ => { PrintMessage("Click!");});
-        
         if(url != "about:blank")
         {
             _url = url;
@@ -495,7 +428,14 @@ public class WebViewController : MonoBehaviour
         
         DOVirtual.DelayedCall(1, ()=>
         {
-            Permissions.PermissionManager.AskPermission("android.permission.POST_NOTIFICATIONS");
+            string key = $"asked_{permission}";
+            
+            if (PlayerPrefs.GetInt(key, 0) == 0)
+            {
+                PlayerPrefs.SetInt(key, 1);
+                
+                Permissions.PermissionManager.AskPermission(permission);
+            }
         });
     }
 
